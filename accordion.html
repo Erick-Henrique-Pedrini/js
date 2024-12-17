@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/f9eee77ae5.js" crossorigin="anonymous"></script>
+    <title>Document</title>
+</head>
+<body>
+    <main>
+        <ul>
+            
+            <li>
+                <h2><span class="fa-solid fa-user-secret"></span> Usuario</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias incidunt reprehenderit cumque rerum. Accusamus minus, illo voluptatibus adipisci tempore, tenetur cupiditate at deleniti distinctio consequuntur voluptate nam non illum iste!</p>
+            </li>
+            <li>
+                <h2><span  class="fa-solid fa-file"></span> Arquivos </h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias incidunt reprehenderit cumque rerum. Accusamus minus, illo voluptatibus adipisci tempore, tenetur cupiditate at deleniti distinctio consequuntur voluptate nam non illum iste!</p>
+            </li>
+            <li>
+                <h2><span class="fa-solid fa-gear"></span> Configurações </h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias incidunt reprehenderit cumque rerum. Accusamus minus, illo voluptatibus adipisci tempore, tenetur cupiditate at deleniti distinctio consequuntur voluptate nam non illum iste!</p>
+            </li>
+        </ul>
+    </main>
+</body>
+</html>
+
+
+
+<style>
+    main{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    ul{
+        background-color: rgb(199, 211, 211);
+        border-radius:30px ;
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        justify-content: center;
+        width: 50vw;
+        padding: 3vw 2vw 3vw 2vw;
+        box-shadow: 10px 7px 10px;
+    }
+    h2{
+        align-items: center;
+        margin: 2vw 0vw 2vw 0vw;
+    }
+    span:hover{
+        cursor: pointer;
+    }
+    p { 
+            transform: translateY(-2vw);
+            opacity: 0; 
+            max-height: 0;  
+            overflow: hidden;
+            transition: .5s ease-in-out; 
+            display: block;  
+        }
+
+        /* Classe para mostrar o conteúdo */
+        .show {
+            transform: translateY(0vw);
+            opacity: 1; 
+            max-height: 1000px;  
+            transition: .5s ease-in-out; 
+
+        }
+</style>
+<script>
+    const span = document.querySelectorAll("span")
+    span.forEach((item) => {
+        item.addEventListener("click", function(e){
+            console.log("foi")
+            let p = this.parentNode.parentNode.querySelector("p");
+            
+            p.classList.toggle("show")
+            return
+        })
+    })
+</script>
